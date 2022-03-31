@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-function ask {
+function makeaguess{
 	echo "Enter the number of files in the current directory:"
 	read guess
     files=$(ls -1 | wc -l)
 }
 
-ask
+makeaguess
 
 while [[ $guess -ne $files ]]
 do
@@ -15,7 +15,7 @@ do
 	else
 		echo "Too high."
 	fi
-	ask
+	makeaguess
 done
 
 echo "Correct answer! here is the list of files:"
