@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-function makeaguess{
-	echo "Enter the number of files in the current directory:"
+function makeaguess {
+	echo "Enter the number of files in the current directory:";
 	read guess
-    files=$(ls -1 | wc -l)
+    files=$(ls -a | wc -l)
 }
 
 makeaguess
