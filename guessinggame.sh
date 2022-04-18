@@ -1,22 +1,27 @@
 #!/usr/bin/env bash
-function makeaguess {
-	echo "Enter the number of files in the current directory:";
-	read guess
-    files=$(ls -a | wc -l)
+
+takeAGuess() {
+	echo "Can you guess how many files are located in the current Directory?";
+	read userGuess
 }
 
-makeaguess
 
-while [[ $guess -ne $files ]]
+takeAGuess
+noOfFiles=$(ls -A | wc -l)
+
+while (( $userGuess != $noOfFiles ))
 do
-	if [[ $guess -lt $files ]] 
+	if (( $userGuess < $noOfFiles ))
 	then
-		echo "Too low."
-	else
-		echo "Too high."
+		echo "Your guess was too low.";
+	elif (( $userGuess > $noOfFiles ))
+	then
+		echo "Your guess was too high.";
+	else 
+	    echo "Invalid Input";
 	fi
-	makeaguess
+	takeAGuess
 done
 
-echo "Correct answer! here is the list of files:"
-echo "---" && ls -1
+echo "You have guessed the answer correctly!"
+echo "Corect Answer was" $noOfFiles

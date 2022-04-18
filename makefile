@@ -1,11 +1,11 @@
 all: README.md
 
 README.md: guessinggame.sh
-	echo "The Unix Workbench Peer Assignment" > README.md
-	echo -n "\n-----Make date-----: " >> README.md
-	date >> README.md
-	echo -n "\n-----Number of lines in guessinggame.sh:----- " >> README.md
+	echo "Course: Unix WorkBench (Linux Shell Scripting)" > README.md
+	echo "Peer-Assignment Submission - Guessing Game\n" >> README.md
+	echo -n "Creation Date of MakeFile/README:  " >> README.md
+	date >> README.md  
+	echo -n "\nNumber of Lines of Code in the guessinggame.sh File:  " >> README.md
 	grep -c '' guessinggame.sh >> README.md
+	echo "END" >> README.md
 
-clean:
-	rm README.md
